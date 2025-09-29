@@ -9,9 +9,8 @@ set relativenumber
 set showmode
 set showcmd
 
+set ignorecase
 set smartcase
-set incsearch
-set hlsearch
 
 set visualbell
 
@@ -67,11 +66,14 @@ let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 let g:WhichKeyDesc_hide_active = "<leader>dh Hide All Windows"
 let g:WhichKeyDesc_build_window = "<leader>db Build Window"
+let g:WhichKeyDesc_find_all = "<leader>dF Find all"
+let g:WhichKeyDesc_next_project_window = "<leader>dn Next Project Window"
+
 
 let g:WhichKeyDesc_action= "<leader>a Actions"
 let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu"
 let g:WhichKeyDesc_action_search = "<leader>as Open command modal"
-let g:WhichKeyDesc_action_extract_function ="<leader>ae Extract Function in Scope"
+let g:WhichKeyDesc_action_extract_function = "<leader>ae Extract Function in Scope"
 
 let g:WhichKeyDesc_file_quickLook = "<leader><leader> Recent files"
 
@@ -105,7 +107,7 @@ let g:WhichKeyDesc_git_commit = "<leader>hc Open Git commit dialog"
 let g:WhichKeyDesc_git_status = "<leader>hs Open Git status dialog"
 let g:WhichKeyDesc_git_branches = "<leader>hb Open Git branches list"
 let g:WhichKeyDesc_git_history_for_selection = "<leader>hh Open Git History for Selection"
-let g:WhichKeyDes_git_annotate = "<leader>ha Annotate"
+let g:WhichKeyDesc_git_annotate = "<leader>ha Annotate"
 let g:WhichKeyDesc_git_revert = "<leader>hr Revert"
 
 let g:WhichKeyDesc_errors = "<leader>e Error navigation"
@@ -113,20 +115,20 @@ let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
 let g:WhichKeyDesc_errors_prev = "<leader>ep Go to previous error in solution"
 
 let g:WhichKeyDesc_build = "<leader>b Build Tasks"
-let g:WhichKeyDesc_build_build = "<leader>bf Build"
 let g:WhichKeyDesc_build_run = "<leader>br Run"
 let g:WhichKeyDesc_build_debug = "<leader>bd Debug"
 let g:WhichKeyDesc_build_attach_debugger = "<leader>ba Attach Debugger"
 let g:WhichKeyDesc_run_device = "<leader>bo Output Device"
-let g:WhichKeyDesc_running_device_window = "<leader>bw Open Running Device Window"
+let g:WhichKeyDesc_run_running_device_window = "<leader>bw Open Running Device Window"
 let g:WhichKeyDesc_sync_project = "<leader>bs Sync Project"
 let g:WhichKeyDesc_log_cat = "<leader>bl Logcat Window"
-let g:WhichKeyDesc_timer = "<leader>bp Restart Timer"
 let g:WhichKeyDesc_stop_build = "<leader>bt Stop Background Process"
 let g:WhichKeyDesc_run_config = "<leader>bc Choose Run Configuration"
 
-let g:WhichKeyDesc_vim = "<leader>v Vim Plugin Commands"
+let g:WhichKeyDes_vim = "<leader>v Vim Plugin Commands"
 let g:WhichKeyDesc_vim_reload = "<leader>vr Vim File Reload"
+let g:WhichKeyDesc_copilot_chat = "<leader>vc Open GitHub Copilot Chat"
+let g:WhichKeyDesc_pomodoro = "<leader>vp Start/Stop Pomodoro"
 
 "" Key mappings
 "" ========================================================
@@ -158,6 +160,12 @@ inoremap <C-k> <Action>(PopupMenu-selectPrev)
 "" Leader commands
 "" ========================================================
 
+
+" Plugin Commands
+map <leader>vr <action>(IdeaVim.ReloadVimRc.reload)
+map <leader>vc <action>(ActivateGitHubCopilotChatToolWindow)
+map <leader>vp <Action>(StartOrStopPomodoro)
+
 " Comment lines
 map <leader>c <action>(CommentByLineComment)
 
@@ -171,7 +179,7 @@ map <leader>x :NERDTreeToggle<CR>
 map <leader>zc :action CollapseAllRegions<CR>
 map <leader>zo :action ExpandAllRegions<CR>
 map <leader>zb <Action>(CollapseRegion)
-map <leader>ze <Action>ExpandRegion)
+map <leader>ze <Action>(ExpandRegion)
 
 " Window splits
 map <leader>wv <Action>(MoveTabRight)
@@ -185,6 +193,8 @@ map <leader>dz <action>(ToggleZenMode)
 map <leader>df <action>(ToggleFullScreen)
 map <leader>dh <action>(HideAllWindows)
 map <leader>db <action>(ActivateBuildToolWindow)
+map <leader>dF <action>(FindInPath)
+map <leader>dn <action>(NextProjectWindow)
 
 " Actions
 map <leader>am <action>(ShowIntentionActions)
@@ -222,25 +232,22 @@ nmap <leader>gb <Action>(Back)
 " Git windows
 map <leader>hc <Action>(CheckinProject)
 map <leader>hs <Action>(ActivateVersionControlToolWindow)
-map <leader>hb <Action>(Git.Branches)
 map <leader>hh <Action>(Vcs.ShowHistoryForBlock)
 map <leader>ha <Action>(Annotate)
-map <leader>hr <Action>(ChangesView.Revert)
+map <leader>hr <Action>(Vcs.RollbackChangedLines)
 
 " Errors
 map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
 map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
 
-map <leader>vr <action>(IdeaVim.ReloadVimRc.reload)
-
-map <leader>bf <action>(RebuildGradleProject)
-map <leader>br <action>(Run)
-map <leader>bd <action>(Debug)
-map <leader>ba <action>(AndroidConnectDebuggerAction)
-map <leader>bo <action>(DeviceAndSnapshotComboBox)
-map <leader>bw <action>(ActivateRunningDevicesToolWindow)
-map <leader>bs <action>(Android.SyncProject)
-map <leader>bl <action>(ActivateLogcatToolWindow)
-map <leader>bp <action>(StartOrStopPomodoro)
-map <leader>bt <action>(StopBackgroundProcesses)
+" Build Tasks
+map <leader>br <Action>(Run)
+map <leader>bd <Action>(Debug)
+map <leader>ba <Action>(AndroidConnectDebuggerAction)
+map <leader>bo <Action>(DeviceAndSnapshotComboBox)
+map <leader>bw <Action>(ActivateRunningDevicesToolWindow)
+map <leader>bs <Action>(Android.SyncProject)
+map <leader>bl <Action>(ActivateLogcatToolWindow)
+map <leader>bt <Action>(StopBackgroundProcesses)
 map <leader>bc <Action>(ChooseRunConfiguration)
+map <leader>bk <Action>(ToggleLineBreakpoint)
