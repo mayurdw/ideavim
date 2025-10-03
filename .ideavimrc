@@ -68,7 +68,7 @@ let g:WhichKeyDesc_hide_active = "<leader>dh Hide All Windows"
 let g:WhichKeyDesc_build_window = "<leader>db Build Window"
 let g:WhichKeyDesc_find_all = "<leader>dF Find all"
 let g:WhichKeyDesc_next_project_window = "<leader>dn Next Project Window"
-
+let g:WhichKeyDesc_build_variant = "<leader>dw Select Build Variant"
 
 let g:WhichKeyDesc_action= "<leader>a Actions"
 let g:WhichKeyDesc_action_context_menu = "<leader>am Open context menu"
@@ -92,6 +92,7 @@ let g:WhichKeyDesc_refactoring_variable = "<leader>rv Introduce variable"
 let g:WhichKeyDesc_refactoring_field = "<leader>rf Introduce field"
 let g:WhichKeyDesc_refactoring_signature = "<leader>rs Change signature"
 let g:WhichKeyDesc_refactoring_all = "<leader>rr Open refactorings list"
+let g:WhichKeyDesc_reformat_code = "<leader>rc Reformat Code"
 
 let g:WhichKeyDesc_goto = "<leader>g Go to X"
 let g:WhichKeyDesc_goto_declaration = "<leader>gd Go to Definition"
@@ -124,11 +125,12 @@ let g:WhichKeyDesc_sync_project = "<leader>bs Sync Project"
 let g:WhichKeyDesc_log_cat = "<leader>bl Logcat Window"
 let g:WhichKeyDesc_stop_build = "<leader>bt Stop Background Process"
 let g:WhichKeyDesc_run_config = "<leader>bc Choose Run Configuration"
+let g:WhichKeyDesc_toggle_breakpoint = "<leader>bk Toggle Breakpoint"
+let g:WhichKeyDesc_Rebuild = "<leader>bR Clean & Rebuild Project"
 
 let g:WhichKeyDes_vim = "<leader>v Vim Plugin Commands"
 let g:WhichKeyDesc_vim_reload = "<leader>vr Vim File Reload"
 let g:WhichKeyDesc_copilot_chat = "<leader>vc Open GitHub Copilot Chat"
-let g:WhichKeyDesc_pomodoro = "<leader>vp Start/Stop Pomodoro"
 
 "" Key mappings
 "" ========================================================
@@ -164,7 +166,6 @@ inoremap <C-k> <Action>(PopupMenu-selectPrev)
 " Plugin Commands
 map <leader>vr <action>(IdeaVim.ReloadVimRc.reload)
 map <leader>vc <action>(ActivateGitHubCopilotChatToolWindow)
-map <leader>vp <Action>(StartOrStopPomodoro)
 
 " Comment lines
 map <leader>c <action>(CommentByLineComment)
@@ -195,6 +196,7 @@ map <leader>dh <action>(HideAllWindows)
 map <leader>db <action>(ActivateBuildToolWindow)
 map <leader>dF <action>(FindInPath)
 map <leader>dn <action>(NextProjectWindow)
+map <leader>dw <action>(SelectBuildVariant)
 
 " Actions
 map <leader>am <action>(ShowIntentionActions)
@@ -207,7 +209,6 @@ map <leader>fr <action>(RecentFiles)
 map <leader>fc <action>(FindInPath)
 map <leader><leader> <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
-map <leader>fs <action>(NewScratchFile)
 
 " Close active tab
 map <leader>q <action>(CloseContent)
@@ -219,6 +220,7 @@ map <leader>rv <Action>(IntroduceVariable)
 map <leader>rf <Action>(IntroduceField)
 map <leader>rs <Action>(ChangeSignature)
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>rc <Action>(ReformatCode)
 
 " Go to code
 nmap <leader>gd <Action>(GotoDeclaration)
@@ -251,3 +253,4 @@ map <leader>bl <Action>(ActivateLogcatToolWindow)
 map <leader>bt <Action>(StopBackgroundProcesses)
 map <leader>bc <Action>(ChooseRunConfiguration)
 map <leader>bk <Action>(ToggleLineBreakpoint)
+map <leader>bR <action>(RebuildCleanProject)
