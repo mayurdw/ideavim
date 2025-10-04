@@ -135,7 +135,7 @@ let g:WhichKeyDesc_copilot_chat = "<leader>vc Open GitHub Copilot Chat"
 "" Key mappings
 "" ========================================================
 
-inoremap jk <Esc>
+inoremap jk <Esc>:w<CR>
 
 " Tab navigation
 nnoremap <A-n> :tabnext<CR>
