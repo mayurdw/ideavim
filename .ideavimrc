@@ -239,8 +239,8 @@ map <leader>ha <Action>(Annotate)
 map <leader>hr <Action>(Vcs.RollbackChangedLines)
 
 " Errors
-map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
-map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
+map <leader>en <Action>(GotoNextError)
+map <leader>ep <Action>(GotoPreviousError)
 
 " Build Tasks
 map <leader>br <Action>(Run)
