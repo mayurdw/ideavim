@@ -128,6 +128,7 @@ let g:WhichKeyDesc_stop_build = "<leader>bt Stop Background Process"
 let g:WhichKeyDesc_run_config = "<leader>bc Choose Run Configuration"
 let g:WhichKeyDesc_toggle_breakpoint = "<leader>bk Toggle Breakpoint"
 let g:WhichKeyDesc_Rebuild = "<leader>bC Clean & Rebuild Project"
+let g:WhichKeyDesc_RunClass = "<leader>bR Run Test Class"
 
 let g:WhichKeyDes_vim = "<leader>v Vim Plugin Commands"
 let g:WhichKeyDesc_vim_reload = "<leader>vr Vim File Reload"
@@ -256,3 +257,4 @@ map <leader>bt <Action>(StopBackgroundProcesses)
 map <leader>bc <Action>(ChooseRunConfiguration)
 map <leader>bk <Action>(ToggleLineBreakpoint)
 map <leader>bC <action>(CleanGradleProject)
+map <leader>bR <action>(RunClass)
