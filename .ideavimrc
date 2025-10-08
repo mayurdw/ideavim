@@ -59,6 +59,7 @@ let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split vertically"
 let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
 let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
 let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
+let g:WhichKeyDesc_window_activate_resources = "<leader>wr Activate Resources Tool Window"
 
 let g:WhichKeyDesc_display = "<leader>d Display options"
 let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
@@ -126,7 +127,7 @@ let g:WhichKeyDesc_log_cat = "<leader>bl Logcat Window"
 let g:WhichKeyDesc_stop_build = "<leader>bt Stop Background Process"
 let g:WhichKeyDesc_run_config = "<leader>bc Choose Run Configuration"
 let g:WhichKeyDesc_toggle_breakpoint = "<leader>bk Toggle Breakpoint"
-let g:WhichKeyDesc_Rebuild = "<leader>bR Clean & Rebuild Project"
+let g:WhichKeyDesc_Rebuild = "<leader>bC Clean & Rebuild Project"
 
 let g:WhichKeyDes_vim = "<leader>v Vim Plugin Commands"
 let g:WhichKeyDesc_vim_reload = "<leader>vr Vim File Reload"
@@ -187,6 +188,7 @@ map <leader>wv <Action>(MoveTabRight)
 map <leader>wh <Action>(MoveTabDown)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+map <leader>wr <Action>(ActivateResourcesExplorerToolWindow)
 
 " Display options
 map <leader>dd <action>(ToggleDistractionFreeMode)
@@ -253,4 +255,4 @@ map <leader>bl <Action>(ActivateLogcatToolWindow)
 map <leader>bt <Action>(StopBackgroundProcesses)
 map <leader>bc <Action>(ChooseRunConfiguration)
 map <leader>bk <Action>(ToggleLineBreakpoint)
-map <leader>bR <action>(RebuildCleanProject)
+map <leader>bC <action>(CleanGradleProject)
