@@ -190,6 +190,7 @@ map <leader>wh <Action>(MoveTabDown)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 map <leader>wr <Action>(ActivateResourcesExplorerToolWindow)
+map <leader>wa <Action>(ActivateAppInspectionToolWindow)
 
 " Display options
 map <leader>dd <action>(ToggleDistractionFreeMode)
@@ -210,7 +211,6 @@ map <leader>ae <action>(ExtractFunctionToScope)
 map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
 map <leader>fc <action>(FindInPath)
-map <leader><leader> <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 
 " Close active tab
