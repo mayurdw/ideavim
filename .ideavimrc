@@ -48,6 +48,10 @@ let g:WhichKeyDesc_easymotion_prefix = "<leader><leader>"
 
 let g:WhichKeyDesc_comment = "<leader>c Comment line"
 
+let g:WhichKeyDesc_close = "<leader>q Close"
+let g:WhichKeyDesc_close_other = "<leader>qo Close Other Tabs"
+let g:WhichKeyDesc_close_current = "<leader>qc Close current Tab"
+
 let g:WhichKeyDesc_fold = "<leader>z Folding"
 let g:WhichKeyDesc_fold_all = "<leader>zc Fold all regions"
 let g:WhichKeyDesc_unfold_all = "<leader>zo Unfold all regions"
@@ -60,13 +64,15 @@ let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split horizontally"
 let g:WhichKeyDesc_window_split_unsplit = "<leader>wu Unsplit"
 let g:WhichKeyDesc_window_split_move_editor = "<leader>wm Move editor to opposite tab group"
 let g:WhichKeyDesc_window_activate_resources = "<leader>wr Activate Resources Tool Window"
+let g:WhichKeyDesc_build_window = "<leader>wb Build Window"
+let g:WhichKeyDesc_log_cat = "<leader>wl Logcat Window"
+let g:WhichKeyDesc_inspection = "<leader>wa App Inspection Window"
 
 let g:WhichKeyDesc_display = "<leader>d Display options"
 let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
 let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
 let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 let g:WhichKeyDesc_hide_active = "<leader>dh Hide All Windows"
-let g:WhichKeyDesc_build_window = "<leader>db Build Window"
 let g:WhichKeyDesc_find_all = "<leader>dF Find all"
 let g:WhichKeyDesc_next_project_window = "<leader>dn Next Project Window"
 let g:WhichKeyDesc_build_variant = "<leader>dw Select Build Variant"
@@ -123,7 +129,6 @@ let g:WhichKeyDesc_build_attach_debugger = "<leader>ba Attach Debugger"
 let g:WhichKeyDesc_run_device = "<leader>bo Output Device"
 let g:WhichKeyDesc_run_running_device_window = "<leader>bw Open Running Device Window"
 let g:WhichKeyDesc_sync_project = "<leader>bs Sync Project"
-let g:WhichKeyDesc_log_cat = "<leader>bl Logcat Window"
 let g:WhichKeyDesc_stop_build = "<leader>bt Stop Background Process"
 let g:WhichKeyDesc_run_config = "<leader>bc Choose Run Configuration"
 let g:WhichKeyDesc_toggle_breakpoint = "<leader>bk Toggle Breakpoint"
@@ -191,13 +196,14 @@ map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
 map <leader>wr <Action>(ActivateResourcesExplorerToolWindow)
 map <leader>wa <Action>(ActivateAppInspectionToolWindow)
+map <leader>wb <action>(ActivateBuildToolWindow)
+map <leader>wl <Action>(ActivateLogcatToolWindow)
 
 " Display options
 map <leader>dd <action>(ToggleDistractionFreeMode)
 map <leader>dz <action>(ToggleZenMode)
 map <leader>df <action>(ToggleFullScreen)
 map <leader>dh <action>(HideAllWindows)
-map <leader>db <action>(ActivateBuildToolWindow)
 map <leader>dF <action>(FindInPath)
 map <leader>dn <action>(NextProjectWindow)
 map <leader>dw <action>(SelectBuildVariant)
@@ -213,8 +219,9 @@ map <leader>fr <action>(RecentFiles)
 map <leader>fc <action>(FindInPath)
 map <leader>fl <action>(RecentLocations)
 
-" Close active tab
-map <leader>q <action>(CloseContent)
+" Close tab
+map <leader>qc <action>(CloseContent)
+map <leader>qo <action>(CloseAllEditorsButActive)
 
 " Refactoring
 map <leader>rn <Action>(RenameElement)
@@ -252,7 +259,6 @@ map <leader>ba <Action>(AndroidConnectDebuggerAction)
 map <leader>bo <Action>(DeviceAndSnapshotComboBox)
 map <leader>bw <Action>(ActivateRunningDevicesToolWindow)
 map <leader>bs <Action>(Android.SyncProject)
-map <leader>bl <Action>(ActivateLogcatToolWindow)
 map <leader>bt <Action>(StopBackgroundProcesses)
 map <leader>bc <Action>(ChooseRunConfiguration)
 map <leader>bk <Action>(ToggleLineBreakpoint)
