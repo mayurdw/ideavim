@@ -159,8 +159,8 @@ nnoremap <A-j> <C-w>j
 nmap <C-j> :move-2<CR>
 nmap <C-k> :move+<CR>
 
-imap <C-j> <C-O>:move-2<CR>
-imap <C-k> <C-O>:move+<CR>
+imap <C-k> <C-O>:move-2<CR>
+imap <C-j> <C-O>:move+<CR>
 
 " Easy visual indentation
 vnoremap < <gv
