@@ -152,8 +152,8 @@ let g:WhichKeyDesc_project_recent_window = "<leader>pr Recent Projects"
 inoremap jk <Esc>:w<CR>
 
 " Tab navigation
-nnoremap <A-n> :tabnext<CR>
-nnoremap <A-p> :tabprev<CR>
+nnoremap ]b :tabnext<CR>
+nnoremap [b :tabprev<CR>
 
 " Pane navigation
 nnoremap <C-h> <C-w>h
@@ -164,9 +164,9 @@ nnoremap <C-j> <C-w>j
 " Move Lines
 nmap K :move-2<CR>
 nmap J :move+<CR>
+nmap H ^
+nmap L $
 
-" imap <C-k> <C-O>:move-2<CR>
-" imap <C-j> <C-O>:move+<CR>
 
 " Easy visual indentation
 vnoremap < <gv
