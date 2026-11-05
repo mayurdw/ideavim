@@ -102,7 +102,6 @@ let g:WhichKeyDesc_refactoring_all = "<leader>rr Open refactorings list"
 let g:WhichKeyDesc_reformat_code = "<leader>rc Reformat Code"
 
 let g:WhichKeyDesc_goto = "<leader>g Go to X"
-let g:WhichKeyDesc_goto_declaration = "<leader>gd Go to Definition"
 let g:WhichKeyDesc_goto_type_declaration = "<leader>gy Go to Type Definition"
 let g:WhichKeyDesc_goto_implementation = "<leader>gi Go to Implementation"
 let g:WhichKeyDesc_goto_usages = "<leader>gu Go to Usages"
@@ -247,7 +246,6 @@ map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <leader>rc <Action>(ReformatCode)
 
 " Go to code
-nmap <leader>gd <Action>(GotoDeclaration)
 nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>gu <Action>(ShowUsages)
